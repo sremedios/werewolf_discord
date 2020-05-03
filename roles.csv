@@ -1,0 +1,31 @@
+﻿Role Name,Team,Seer Role,Points,Description
+Werewolf,W,W,,"Chooses whether they want to kill at night, and then chooses which player to kill if yes"
+Werecub,W,W,,"If killed by lynching, werewolf can kill twice following night. If werewolf dies, werecub becomes werewolf."
+Werekitten,W,V,,Seen by seer as villager team. Gunner will always miss. Seer never sees real role.
+Minion,W,W,,"System randomly makes a player a minion in addition to their other role. The werewolf does NOT know who the minion is, but the minion is told which players on are on the WW team."
+Spellcaster,W,V,,Single use. Hexes a player - hexed players cannot use their special powers during the next day and night. Hexed players are also silenced and prevented from speaking the next day.
+Tough Wolf,W,W,,"Survives the first time they are lynched and also cannot be killed by the Gunner. Any subsequent lynch will succeed, and all other methods of killing will succeed on first try."
+Traitor,W,V,,"Once the first wolf team player dies, the traitor becomes that role"
+Warlock,W,V,,Single use. Curses a player to be seen as WW team for the rest of the game.
+Doctor,V,V,,"At the end of the night, gets a list of dead players and may bring one back to life. Success rate 75%. The revived player is not allowed to identify the Doctor."
+Seer,V,V,,"Every night, chooses a player to see which team they are on. 35% chance for mystic enlightenment, instead seeing the actual role"
+Bodyguard,V,V,,"Every night, chooses a player to protect from death. If the protected player is chosen to be killed, the Bodyguard dies instead."
+Guardian Angel,V,V,,"Every night, chooses a player to protect from death. Able to proect themselves. Cannot choose the same player twice in a row."
+Huntress,V,V,,"Once per game, you may kill a player at night"
+Harlot,V,V,,"Every night, chooses a player to hide with. If the chosen player is on the WW team, Harlot dies. If the wolf team chooses to kill the Harlot while the Harlot is hiding, the Harlot doesn't die. The Harlot may choose to stay at their own home."
+Hunter,V,V,,"If you are eliminated for any reason, you may immediately eliminate another player."
+Mentalist,V,V,,"Every night, chooses two players to determine if they are on the same team. Always sess the true team, regardless of targets' roles. Cannot choose self"
+Mad Scientist,V,W,,"On death, kills players to the left and right of them as seen by moderator's sreen. Skips over dead players."
+Cupid,V,V,,"At game start, chooses two players to be ""lovers"". If one of the lovers dies, the other also dies."
+Mystic,V,V,,"At the start of each night, the Mystic is told how many players are on the WW team (true # of players)"
+Prophet,V,V,,"Every night, chooses a role and is told whether that role is still in play."
+Shaman,V,V,,"Mandatory. At the start of each night, select a player to be given a random totem to be held through the night and next day. The selected player and Shaman will know which totem they receive. Totem disappears at the start of the next night. You may give yourself a totem, but cannot give the same player a totem two nights in a row."
+Revealer,V,V,,"Optional. Choose a player to kill at night. If the player is not the Werewolf or Monster, you die instead."
+Lycan,V,W,,"Seen by seer as WW team. If killed by the Werewolf, joins the WW team instead of dying."
+Mason,V,V,,"At the start of the game, all Masons are told who all other Masons are. If a Mason voluntarily reveals their role or any other Mason's role, one Mason will die at random (uniform distribution) (including self)"
+Gunner,V,V,,"Optional. 2 bullets. May choose a player to kill during the day. 25% miss, 25% explode, 50% hit."
+Prince,V,V,,"If voted to be lynched, your role is revealed and you survive."
+Doppelganger,N,V,,"At the start of the game, choose a player. When that player dies, the Doppelganger becomes that role and joins that team."
+Monster,N,W,,The Monster wins instead of the normal winners if they survive until the end of the game. The monster cannot be killed by the wolves.
+Turncoat,N,N,,The Turncoat can switch teams. The Turncoat does not start on a team and must choose one at the start of the game. The Turncoat cannot switch teams two nights in a row.
+Villager,V,V,,Tries to eliminate all non-village team players through lynching.

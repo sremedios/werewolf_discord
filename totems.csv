@@ -1,0 +1,9 @@
+﻿totem name,totem effect
+Death Totem,Die the following day unless protected by any other means
+Protection Totem,Protected against any external form of death. Lover suicide is not protected against.
+Revealing Totem,"If lynched during the day, surivve and role is releaved instead."
+Silence Totem,Unable to speak or use special powers
+Desperation Totem,"If lynched during the day, the accusor dies as well"
+Impatience Totem,Always votes to kill
+Pacifism Totem,Always votes to save
+Influence Totem,Votes count twice

@@ -1,0 +1,31 @@
+﻿Drunk role,Drunk effect
+Werewolf,Randomly choose players to eliminate
+Werecub,"If killed by lynching, werewolf can kill twice following night. Drunk Werecub does not become the Werewolf when the Werewolf dies"
+Werekitten,Seen by seer as villager team. Gunner percentages are normal against Drunk Werekitten. Seer may see the real role as usual.
+Minion,Drunk Minion is told which players on are on the WW team plus one additional non-WW team player. Drunk Minion does not know who is who.
+Spellcaster,Single use. Hexes a player at random.
+Tough Wolf,Only 50% chance of surviving the first time they are lynched and also cannot be killed by the Gunner. 
+Traitor,"Once the first wolf team player dies, 50% chance  the traitor becomes that role, 50% chance the traitor becomes a villager"
+Warlock,Single use. Curses a player at random to be seen as WW team for the rest of the game.
+Doctor,"At the end of the night, gets a list of dead players and may bring one back to life. Success rate 40%. The revived player is not allowed to identify the Doctor."
+Seer,"Every night, randomly chooses a player to see which team they are on. 10% chance for mystic enlightenment, instead seeing the actual role"
+Bodyguard,"Every night, randomly chooses a player to protect from death. If the protected player is chosen to be killed, the Bodyguard dies instead."
+Guardian Angel,"Every night, randomly chooses a player to protect from death. Able to proect themselves. Cannot choose the same player twice in a row."
+Huntress,"Once per game, you may kill a random player at night"
+Harlot,"Every night, chooses a random player to hide with. If the chosen player is on the WW team, Harlot dies. If the wolf team chooses to kill the Harlot while the Harlot is hiding, the Harlot doesn't die. The Harlot may choose to stay at their own home."
+Hunter,"If you are eliminated for any reason, you may immediately eliminate another random player."
+Mentalist,"Every night, chooses two players at random to determine if they are on the same team. Always sess the true team, regardless of targets' roles. Cannot choose self"
+Mad Scientist,"On death, randomly choose a direction (up, left, right, down) and  kills 2 players in that direction from the moderator's POV. Skips over dead players."
+Cupid,"At game start, chooses two random players to be ""lovers"". If one of the lovers dies, the other also dies."
+Mystic,"At the start of each night, the Mystic is told how many players are on the WW team (true # of players) plus or minus 1."
+Prophet,"Every night, chooses a role at random and is told whether that role is still in play."
+Shaman,"Mandatory. At the start of each night, select a player at random to be given a random totem to be held through the night and next day."
+Revealer,"Optional. Choose a player at random to kill at night. If the player is not the Werewolf or Monster, you die instead."
+Lycan,"Seen by seer as WW team. If killed by the Werewolf, 50% joins the WW team instead of dying, 50% just dies"
+Mason,"At the start of the game, the Drunk Mason is told who all the other Masons are plus one other player at random."
+Gunner,"Optional. 6 bullets. May choose a player to kill during the day. 33% miss, 33% explode, 33% hit."
+Prince,"If voted to be lynched, 50% of your role being revealed and you survive; 50% of just dying"
+Doppelganger,"At the start of the game, choose a player at random. When that player dies, the Doppelganger becomes that Drunk role and joins that team."
+Monster,Drunk Monster is seen by the Seer as the Monster.
+Turncoat,The Turncoat has 50% chance of team switching failing.
+Villager,Lynch votes are 50% chance for kill and 50% chance for not kill.
