@@ -38,3 +38,9 @@ def drunk_shoot():
         print("Miss")
     else:
         print("Gun exploded. Suicide")
+
+def random_totem(totem_csv):
+    df = pd.read_csv(totem_csv)
+    df = shuffle(df, random_state=int(time()))
+    print("{}: {}".format(df.iloc[0]['Totem Name'], df.iloc[0]['Totem Effect']))
+    

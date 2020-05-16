@@ -10,12 +10,6 @@ def parse_players(txt_file):
 
 def get_roles(df, players, restrictions, **game_options):
 
-    # TODO: after shaman is implemented, remove lines
-    # drop shaman until implemented
-    df = df[df['Role Name'] != 'Shaman']
-    # TODO: after shaman is implemented, remove lines
-
-
     ########## W TEAM OPERATIONS ##########
     num_w_team = int(len(players) * game_options['w_team_percentage'])
 
