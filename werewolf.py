@@ -11,9 +11,9 @@ def new_game():
 
     # only one of each group can be in a game at a time
     restrictions = {
-        'assassins': ['Huntress', 'Hunter', 'Gunner'],
-        'guardians': ['Guardian Angel', 'Bodyguard', 'Doctor', 'Shaman'],
-        'chaos': ['Cupid', 'Mad Scientist', 'Revealer'],
+        'assassins': ['Huntress', 'Hunter', 'Gunner', 'Revealer'],
+        'guardians': ['Guardian Angel', 'Bodyguard', 'Doctor'],
+        'chaos': ['Cupid', 'Mad Scientist', 'Shaman'],
         'information': ['Seer', 'Mystic', 'Prophet', 'Mentalist']
     }
 
