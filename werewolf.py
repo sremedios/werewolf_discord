@@ -3,31 +3,33 @@ from utils import *
 from abilities import *
 import sys
 
-csv_file = Path("roles.csv")
-df = pd.read_csv(csv_file)
-players_file = Path("players.txt")
-players = parse_players(players_file)
+def new_game():
+    csv_file = Path("roles.csv")
+    df = pd.read_csv(csv_file)
+    players_file = Path("players.txt")
+    players = parse_players(players_file)
 
+    # only one of each group can be in a game at a time
+    restrictions = {
+        'assassins': ['Huntress', 'Hunter', 'Gunner'],
+        'guardians': ['Guardian Angel', 'Bodyguard', 'Doctor', 'Shaman'],
+        'chaos': ['Cupid', 'Mad Scientist', 'Revealer'],
+        'information': ['Seer', 'Mystic', 'Prophet', 'Mentalist']
+    }
 
-# only one of each group can be in a game at a time
-restrictions = {
-    'assassins': ['Huntress', 'Hunter', 'Gunner'],
-    'guardians': ['Guardian Angel', 'Bodyguard', 'Doctor', 'Shaman'],
-    'chaos': ['Cupid', 'Mad Scientist', 'Revealer'],
-    'information': ['Seer', 'Mystic', 'Prophet', 'Mentalist']
-}
+    roles_df = get_roles(
+        df, players, restrictions, 
+        minion_selected=False,
+        w_team_percentage=0.4,
+        monster_chance=0.65,
+        num_masons=2,
+        mason_chance=0.3,
+        duplicate_chance=0.15,
+    )
 
-roles_df = get_roles(
-    df, players, restrictions, 
-    minion_selected=False,
-    w_team_percentage=0.4,
-    monster_chance=0.65,
-    num_masons=2,
-    mason_chance=0.3,
-    duplicate_chance=0.15,
-)
+    assign_roles(players, roles_df)
 
-assign_roles(players, roles_df)
+new_game()
 
 prompt = (
     "\n\n"
@@ -38,14 +40,16 @@ prompt = (
     "chance NUMBER = random chance with success = NUMBER% (eg: roll 40 or roll 0.4)\n"
     "random player = randomly chooses a player\n"
     "random role = randomly chooses a role\n\n\t"
+    "q or quit = exit game\n"
 )
 
 
 while True:
     v = input(prompt)
+    print()
 
     if v == "new":
-        init("roles.csv", parse_players("players.txt"))
+        new_game()
 
     elif v == 'q' or v == 'quit':
         sys.exit()
