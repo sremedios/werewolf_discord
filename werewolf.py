@@ -39,14 +39,15 @@ prompt = (
     "drunk shoot = drunk gunner shoots\n"
     "chance NUMBER = random chance with success = NUMBER% (eg: roll 40 or roll 0.4)\n"
     "random player = randomly chooses a player\n"
-    "random role = randomly chooses a role\n\n\t"
+    "random role = randomly chooses a role\n"
+    "random totem = randomly choose a totem\n"
     "q or quit = exit game\n"
 )
 
 
 while True:
     v = input(prompt)
-    print()
+    print("\n\t")
 
     if v == "new":
         new_game()
@@ -60,6 +61,8 @@ while True:
             shoot()
         elif v == 'drunk shoot':
             drunk_shoot()
+        elif v == "random totem":
+            random_totem()
         elif v == "random player":
             print(random_player(players))
         elif v == 'random role':
