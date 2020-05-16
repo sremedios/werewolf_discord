@@ -105,4 +105,4 @@ def assign_roles(players, roles):
         else:
             drunk = ""
             
-        print(template.format(p, role_prefix + r[1]['Role Name'], ":", ability), '\n', '\n')
+        print(template.format(p, role_prefix + r[1]['Role Name'], ":", ability))

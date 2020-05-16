@@ -3,11 +3,8 @@ from utils import *
 from abilities import *
 import sys
 
-def new_game():
-    csv_file = Path("roles.csv")
+def new_game(csv_file, players):
     df = pd.read_csv(csv_file)
-    players_file = Path("players.txt")
-    players = parse_players(players_file)
 
     # only one of each group can be in a game at a time
     restrictions = {
@@ -29,49 +26,55 @@ def new_game():
 
     assign_roles(players, roles_df)
 
-new_game()
+if __name__ == "__main__":
+    csv_file = Path("roles.csv")
+    players_file = Path("players.txt")
+    totem_file = Path("totems.csv")
+    players = parse_players(players_file)
 
-prompt = (
-    "\n\n"
-    "Which command?\n"
-    "new = start new game\n"
-    "shoot = gunner shoots\n"
-    "drunk shoot = drunk gunner shoots\n"
-    "chance NUMBER = random chance with success = NUMBER% (eg: roll 40 or roll 0.4)\n"
-    "random player = randomly chooses a player\n"
-    "random role = randomly chooses a role\n"
-    "random totem = randomly choose a totem\n"
-    "q or quit = exit game\n"
-)
+    new_game(csv_file, players)
+
+    prompt = (
+        "\n\n"
+        "Which command?\n"
+        "new = start new game\n"
+        "shoot = gunner shoots\n"
+        "drunk shoot = drunk gunner shoots\n"
+        "chance NUMBER = random chance with success = NUMBER% (eg: roll 40 or roll 0.4)\n"
+        "random player = randomly chooses a player\n"
+        "random role = randomly chooses a role\n"
+        "random totem = randomly choose a totem\n"
+        "q or quit = exit game\n"
+        "\n\t"
+    )
 
 
-while True:
-    v = input(prompt)
-    print("\n\t")
+    while True:
+        v = input(prompt)
 
-    if v == "new":
-        new_game()
+        if v == "new":
+            new_game(csv_file, players)
 
-    elif v == 'q' or v == 'quit':
-        sys.exit()
+        elif v == 'q' or v == 'quit':
+            sys.exit()
 
-    else:
-        print("\t\t\tRESULT ======> ", end='')
-        if v == 'shoot':
-            shoot()
-        elif v == 'drunk shoot':
-            drunk_shoot()
-        elif v == "random totem":
-            random_totem()
-        elif v == "random player":
-            print(random_player(players))
-        elif v == 'random role':
-            print(random_role(csv_file))
-        elif v.split()[0] == 'chance':
-            p = v.split()[1]
-            if random_chance(p):
-                print("Success")
-            else:
-                print("Failure")
         else:
-            print("Invalid command. Please type again.")
+            print("\t\t\tRESULT ======> ", end='')
+            if v == 'shoot':
+                shoot()
+            elif v == 'drunk shoot':
+                drunk_shoot()
+            elif v == "random totem":
+                random_totem(totem_file)
+            elif v == "random player":
+                print(random_player(players))
+            elif v == 'random role':
+                print(random_role(csv_file))
+            elif v.split()[0] == 'chance':
+                p = v.split()[1]
+                if random_chance(p):
+                    print("Success")
+                else:
+                    print("Failure")
+            else:
+                print("Invalid command. Please type again.")
