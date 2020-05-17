@@ -1,5 +1,5 @@
 Role Name,Team,Seen by Seer as,Ability,Drunk Ability
-Werewolf,W,W,Nightly. One of two options: kill target player or randomly learn one W team member.
+Werewolf,W,W,"Nightly. One of two options: kill target player or randomly learn one W team member.",
 Werecub,W,W,"Passive. If killed by lynching, Werewolf can kill twice the following night. If Werewolf dies, Werecub becomes Werewolf.","If killed by lynching, werewolf can kill twice following night. Drunk Werecub does not become the Werewolf when the Werewolf dies"
 Werekitten,W,V,"Passive. Seen by seer as villager team. Gunner will always miss. If full role would ever be revealed, instead is seen as Villager.",Seen by seer as villager team. Gunner percentages are normal against Drunk Werekitten. Seer may see the real role as usual.
 Minion,W,W,[Augment] Passive. Knows all players on W team.,Drunk Minion is told which players on are on the WW team plus one additional non-WW team player. Drunk Minion does not know who is who.
