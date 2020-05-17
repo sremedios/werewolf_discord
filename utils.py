@@ -9,9 +9,13 @@ def parse_players(txt_file):
     return sorted(map(lambda l: l.strip().split()[0], open(txt_file, 'r').readlines()))
 
 def get_roles(df, players, restrictions, **game_options):
+    num_w_team = int(len(players) * game_options['w_team_percentage'])
+    num_nv_team = int(len(players) * (1 - game_options['w_team_percentage']))
+
+    if num_w_team + num_nv_team - 1 == len(players):
+        num_nv_team += 1
 
     ########## W TEAM OPERATIONS ##########
-    num_w_team = int(len(players) * game_options['w_team_percentage'])
 
     # extract Werewolf from CSV
     werewolf_row = df[df['Role Name'] == 'Werewolf']
@@ -32,7 +36,6 @@ def get_roles(df, players, restrictions, **game_options):
     ########## V TEAM OPERATIONS ##########
     
     # Get V team
-    num_nv_team = int(len(players) * (1 - game_options['w_team_percentage']))
     v_teams = pd.DataFrame(columns=df.columns) 
         
     # Roll Mason chance
