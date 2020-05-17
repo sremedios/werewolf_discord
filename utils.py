@@ -10,7 +10,7 @@ def parse_players(txt_file):
 
 def get_roles(df, players, restrictions, **game_options):
     num_w_team = int(len(players) * game_options['w_team_percentage'])
-    num_nv_team = int(len(players) * (1 - game_options['w_team_percentage']))
+    num_nv_team = len(players) - num_w_team
 
     if num_w_team + num_nv_team - 1 == len(players):
         num_nv_team += 1
