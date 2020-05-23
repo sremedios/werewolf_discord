@@ -51,6 +51,7 @@ if __name__ == "__main__":
 
     while True:
         v = input(prompt)
+        print("\n")
 
         if v == "new":
             new_game(csv_file, players)

@@ -81,8 +81,9 @@ def get_roles(df, players, restrictions, **game_options):
 def assign_roles(players, roles):
     p, r = shuffle(players), shuffle(roles)
 
-    template = "{:<20}{:<20}{:<3}{}"
-    print(template.format("PLAYER NAME", "ASSIGNED ROLE", "", "ABILITY"))
+    template = "{:<20}{:<30}{:<5}{:<3}{}"
+    text_padding = 48 # this number is the sum of the above padding
+    print(template.format("PLAYER NAME", "ASSIGNED ROLE", "TEAM", "", "ABILITY"))
         
     for i, (p, r) in enumerate(zip(p, r.iterrows())):
         
@@ -96,11 +97,14 @@ def assign_roles(players, roles):
         
         role_prefix = ''
         ability = r[1]['Ability']
+        team = r[1]['Team']
+        
         if i == drunk_index:
             role_prefix += "Drunk "
             ability = r[1]['Drunk Ability']
         if i == minion_index:
             role_prefix += "Minion "
+            team = 'W'
         
         # Randomly assign drunk
         if i == 0:
@@ -108,4 +112,4 @@ def assign_roles(players, roles):
         else:
             drunk = ""
             
-        print(template.format(p, role_prefix + r[1]['Role Name'], ":", ability))
+        print(template.format(p, role_prefix + r[1]['Role Name'], team, ":", ability))
