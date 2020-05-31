@@ -18,7 +18,7 @@ def new_game(csv_file, players):
         df, players, restrictions, 
         minion_selected=False,
         w_team_percentage=0.4,
-        monster_chance=0.65,
+        monster_chance=0.10,
         num_masons=2,
         mason_chance=0.3,
         duplicate_chance=0.15,
