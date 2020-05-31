@@ -81,9 +81,12 @@ def get_roles(df, players, restrictions, **game_options):
 def assign_roles(players, roles):
     p, r = shuffle(players), shuffle(roles)
 
-    template = "{:<20}{:<30}{:<5}{:<3}{}"
+
+    template = "{:<20}{:<30}Team: {:<8}{:<3}{}"
     text_padding = 48 # this number is the sum of the above padding
     print(template.format("PLAYER NAME", "ASSIGNED ROLE", "TEAM", "", "ABILITY"))
+
+    ps, rs = [], []
         
     for i, (p, r) in enumerate(zip(p, r.iterrows())):
         
@@ -113,3 +116,8 @@ def assign_roles(players, roles):
             drunk = ""
             
         print(template.format(p, role_prefix + r[1]['Role Name'], team, ":", ability))
+        ps.append(p)
+        rs.append(role_prefix + r[1]['Role Name'])
+
+    return ps, rs
+

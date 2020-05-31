@@ -24,7 +24,8 @@ def new_game(csv_file, players):
         duplicate_chance=0.15,
     )
 
-    assign_roles(players, roles_df)
+    ps, rs = assign_roles(players, roles_df)
+    return ps, rs
 
 if __name__ == "__main__":
     csv_file = Path("roles.csv")
@@ -32,7 +33,7 @@ if __name__ == "__main__":
     totem_file = Path("totems.csv")
     players = parse_players(players_file)
 
-    new_game(csv_file, players)
+    ps, rs = new_game(csv_file, players)
 
     prompt = (
         "\n\n"
@@ -48,15 +49,28 @@ if __name__ == "__main__":
         "\n\t"
     )
 
+    end_message = "GAME ENDED, ROLES BELOW"
+    prefix_end_game_template = "{} {} {}".format("="*10, end_message, "="*10)
+    end_game_template = "{:<20}{:<30}"
+    suffix_end_game_template = "{}={}={}\n\n".format("="*10, "="*len(end_message), "="*10)
+
 
     while True:
         v = input(prompt)
         print("\n")
 
         if v == "new":
-            new_game(csv_file, players)
+            print(prefix_end_game_template)
+            for p, r in zip(ps, rs):
+                print(end_game_template.format(p, r))
+            print(suffix_end_game_template)
+            ps, rs = new_game(csv_file, players)
 
         elif v == 'q' or v == 'quit':
+            print(prefix_end_game_template)
+            for p, r in zip(ps, rs):
+                print(end_game_template.format(p, r))
+            print(suffix_end_game_template)
             sys.exit()
 
         else:
